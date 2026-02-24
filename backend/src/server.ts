@@ -3,7 +3,7 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import taskRouter from "./routes/tasks";
-// import { errorHandler } from "./middleware/errorHandler.js";
+import { errorHandler } from "./middleware/errorHandlre";
 
 const app = express();
 const PORT = Number(process.env.PORT) || 4000;
@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.use("/api/tasks", taskRouter);
 
-// app.use(errorHandler);
+app.use(errorHandler);
 
 export { app };
 
